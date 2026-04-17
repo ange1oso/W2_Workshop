@@ -1,0 +1,27 @@
++---------------------+          +---------------------+
+|       Client        |          |         Dog         |
++---------------------+          +---------------------+
+| PK ClientID         | 1     M | PK DogID            |
+| Name                |----------| FK ClientID         |
+| PhoneNumber         |          | DogBreed            |
+| Location            |          | AgeOfDog            |
+|                     |          | DogName             |
++---------------------+          +---------------------+
+
+                 +---------------------+
+                 |       Service       |
+                 +---------------------+
+                 | PK ServiceID        |
+                 | FK DogID            |
+                 | DurationOfService   |
+                 | TimeOfService       |
+                 | CostPerService      |
+                 | FK PaymentID        |
+                 +---------------------+
+
+                 +---------------------+
+                 |       Payment       |
+                 +---------------------+
+                 | PK PaymentID        |
+                 | (Other attributes)  |
+                 +---------------------+
