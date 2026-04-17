@@ -1,0 +1,58 @@
++------------------+
+| CLIENTS |
++------------------+
+| ClientID (PK) |
+| Name |
+| PhoneNumber |
+| Location |
++------------------+
+│
+│ 1
+▼
++------------------+
+| DOGS |
++------------------+
+| DogID (PK) |
+| ClientID (FK) |
+| DogName |
+| Breed |
+| Age |
++------------------+
+│
+│ 1
+▼
++------------------+
+| SERVICES |
++------------------+
+| ServiceID (PK) |
+| DogID (FK) |
+| DateTime |
+| Duration |
+| Cost |
+| PaymentID (FK)* |
++------------------+
+│
+│ * (Direct relationship - simple version)
+▼
++------------------+
+| PAYMENTS |
++------------------+
+| PaymentID (PK) |
+| ClientID (FK) |
+| PaymentMethod |
+| PaymentDateTime |
++------------------+
+
+---------------------------------------------
+OPTIONAL (Advanced Many-to-Many Structure)
+---------------------------------------------
+
++-------------------------+
+| SERVICE_PAYMENT |
++-------------------------+
+| ServiceID (FK) |
+| PaymentID (FK) |
++-------------------------+
+
+SERVICES ◄──────► SERVICE_PAYMENT ◄──────► PAYMENTS
+
